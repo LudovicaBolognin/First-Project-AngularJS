@@ -1,0 +1,14 @@
+<div class="m-auto p-5">
+    <button ng-click="$ctrl.myFunction()">click me</button>
+<p>Messaggio di prova: {{prova | uppercase}}</p> <!-- Esiste il filter | orderBy: " proprietà " Vedi: https://www.w3schools.com/angular/angular_filters.asp-->
+
+    <div class="col-md-6 m-auto mb-5 p-3 text-center bg-secondary">
+        <h1 class="text-white">Lista Utenti.</h1>
+        <h6>Seleziona l'utente desiderato per visualizzarne i post.</h6>
+    </div>
+    <ul class="list-group col-md-6 m-auto mb-5">
+        <li class="list-group-item list-group-item-action" aria-current="true" ng-repeat="item in $ctrl.arrayUsers" ng-click="$ctrl.goToUserDetails(item)" ng-model="$ctrl.selectedUser">
+            {{$index+1}}° - {{item.username}}
+        </li>
+    </ul>
+</div>

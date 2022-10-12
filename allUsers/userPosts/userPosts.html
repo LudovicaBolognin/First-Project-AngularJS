@@ -1,0 +1,40 @@
+<div class="m-auto p-5"><h6 class="text-secondary m-3 mb-5">Stai visitando il profilo di: {{$ctrl.dataUser.name}}</h6>
+
+<div class="card" style="width: 30rem;">
+    <div class="card-body">
+        <h5 class="card-title">Nome: {{$ctrl.dataUser.name}}</h5>
+        <p class="card-text">Username: {{$ctrl.dataUser.username}}<br>
+        E-mail: {{$ctrl.dataUser.email}}
+            <br>
+            Indirizzo completo: <i>{{$ctrl.dataUser.address.street}}, {{$ctrl.dataUser.address.suite}}, {{$ctrl.dataUser.address.city}} - {{$ctrl.dataUser.address.zipcode}}</i>
+            <br>
+            Numero di telefono: {{$ctrl.dataUser.phone}}
+            <br>
+        <b>Azienda:</b> {{$ctrl.dataUser.company.name}}</p>
+        <!--<a href="#" class="btn btn-primary">Vai ai commenti</a>--></div>
+    <div class="card-footer"><a href="" class="btn btn-secondary text-info" ng-click="$ctrl.onClick()">Visualizza post di {{$ctrl.dataUser.name}}</a></div>
+</div>
+
+
+
+    <div ng-if="$ctrl.dataPosts != null" class="mt-5 bg-white border border-4 rounded">
+    <h6 class="text-secondary text-center mt-4 display-6">Post pubblicati da {{$ctrl.dataUser.name}}</h6>
+    <div ng-repeat="post in $ctrl.dataPosts" tabindex="-1">
+        <div  class="modal-dialog"> <!--qui il repeat-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Post # {{$index+1}}</h5>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Titolo: {{post.title | uppercase}}</strong></p>
+                    <p><b>Contenuto:</b> <i>{{post.body}}</i></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" ng-click="$ctrl.goToComments(dataUser.id, post.id)">Vai ai commenti</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</div>

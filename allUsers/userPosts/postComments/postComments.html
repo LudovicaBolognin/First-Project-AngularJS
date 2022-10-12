@@ -1,0 +1,15 @@
+<p class="my-5 m-auto text-center display-6">Commenti</p>
+
+<div ng-repeat="comment in $ctrl.arrayComments" class="my-2 mx-5 card">
+    <div class="card-header">
+        Titolo commento # {{$index+1}}: {{comment.name}}
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0 px-5">
+            <p>{{comment.body}}</p>
+            <footer class="blockquote-footer">Scritto da <cite title="Source Title">{{comment.email}}</cite></footer>
+        </blockquote>
+    </div>
+</div>
+
+<!--<div class="my-5 mx-3"><button class="btn btn-secondary">Torna alla pagina Utente</button></div>-->
