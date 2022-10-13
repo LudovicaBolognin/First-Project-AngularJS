@@ -2,25 +2,26 @@
 
 <div class="card" style="width: 30rem;">
     <div class="card-body">
-        <h5 class="card-title">Nome: {{$ctrl.dataUser.name}}</h5>
-        <p class="card-text">Username: {{$ctrl.dataUser.username}}<br>
-        E-mail: {{$ctrl.dataUser.email}}
+        <h5 class="card-title">Nome: {{$ctrl.datauser.name}}</h5>
+        <p class="card-text">Username: {{$ctrl.datauser.username}}<br>
+        E-mail: {{$ctrl.datauser.email}}
             <br>
-            Indirizzo completo: <i>{{$ctrl.dataUser.address.street}}, {{$ctrl.dataUser.address.suite}}, {{$ctrl.dataUser.address.city}} - {{$ctrl.dataUser.address.zipcode}}</i>
+            Indirizzo completo: <i>{{$ctrl.datauser.address.street}}, {{$ctrl.datauser.address.suite}}, {{$ctrl.datauser.address.city}} - {{$ctrl.datauser.address.zipcode}}</i>
             <br>
-            Numero di telefono: {{$ctrl.dataUser.phone}}
+            Numero di telefono: {{$ctrl.datauser.phone}}
             <br>
-        <b>Azienda:</b> {{$ctrl.dataUser.company.name}}</p>
+        <b>Azienda:</b> {{$ctrl.datauser.company.name}}</p>
         <!--<a href="#" class="btn btn-primary">Vai ai commenti</a>--></div>
     <div class="card-footer"><a href="" class="btn btn-secondary text-info" ng-click="$ctrl.onClick()">Visualizza post di {{$ctrl.dataUser.name}}</a></div>
 </div>
 
 
 
-    <div ng-if="$ctrl.dataPosts != null" class="mt-5 bg-white border border-4 rounded">
+    <div ng-if="$ctrl.dataPosts != null && $ctrl.datauser.id != undefined" class="mt-5 bg-white border border-4 rounded">
     <h6 class="text-secondary text-center mt-4 display-6">Post pubblicati da {{$ctrl.dataUser.name}}</h6>
     <div ng-repeat="post in $ctrl.dataPosts" tabindex="-1">
-        <div  class="modal-dialog"> <!--qui il repeat-->
+        <show-posts post="post" datauser="$ctrl.datauser"></show-posts>
+        <!--<div  class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Post # {{$index+1}}</h5>
@@ -30,9 +31,9 @@
                     <p><b>Contenuto:</b> <i>{{post.body}}</i></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" ng-click="$ctrl.goToComments(dataUser.id, post.id)">Vai ai commenti</button>
+                    <button type="button" class="btn btn-secondary" ng-click="$ctrl.goToComments(datauser.id, post.id)">Vai ai commenti</button>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
     </div>

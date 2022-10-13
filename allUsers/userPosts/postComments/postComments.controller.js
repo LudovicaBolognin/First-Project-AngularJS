@@ -5,12 +5,13 @@ const postCommentsController = function ($routeParams, $scope, myService) {
   this.getPostComments = async (id) => {
     const commentsList = await myService.getComments(id);
     this.arrayComments = commentsList;
-    console.log(this.arrayComments);
+    $scope.$apply();
+    //console.log(this.arrayComments);
   }
 
   this.$onInit = () => {
     this.getPostComments($routeParams.id); //???
-    console.log(this.getPostComments($routeParams.id));
-    console.log(this.arrayComments);
+    //console.log(this.getPostComments($routeParams.id));
+    //console.log(this.arrayComments);
   }
 }

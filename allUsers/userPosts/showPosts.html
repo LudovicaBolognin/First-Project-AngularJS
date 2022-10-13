@@ -1,0 +1,15 @@
+<p>Mostra post dell'utente {{$ctrl.datauser.name}} - id: {{$ctrl.datauser.id}} e post: {{$ctrl.post.title}}</p>
+<div  class="modal-dialog"> <!--qui il repeat-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Post # {{$ctrl.post.id}}</h5>
+        </div>
+        <div class="modal-body">
+            <p><strong>Titolo: {{$ctrl.post.title | uppercase}}</strong></p>
+            <p><b>Contenuto:</b> <i>{{$ctrl.post.body}}</i></p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" ng-click="$ctrl.goToComments($ctrl.datauser.id, $ctrl.post.id)">Vai ai commenti</button>
+        </div>
+    </div>
+</div>

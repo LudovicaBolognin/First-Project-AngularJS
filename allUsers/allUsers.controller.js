@@ -12,7 +12,6 @@ const allUsersController = function ($scope, myService, $location) {
     const arrayList = await myService.getAllUsers();
     this.arrayUsers = arrayList;
     $scope.$apply();
-    //return this.arrayUsers;
   };
 
   this.$onInit = () => {
